@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.alejandromartin.cat [NC]
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://alejandromartin.cat/$1 [R=301,L]
