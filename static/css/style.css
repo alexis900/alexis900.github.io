@@ -26,6 +26,10 @@
   padding: 1em;
   letter-spacing: 2px;
 }
+.menu a:active {
+  background: url("../images/icon-hamburger.svg") no-repeat center;
+  visibility: hidden;
+}
 .menu-checkbox {
   margin: 2em;
   display: none;
@@ -69,7 +73,11 @@
   align-items: center;
 }
 .hero {
-  border: 1px solid #f00;
+  display: flex;
+  align-items: center;
+}
+.hero .myPhoto {
+  border-radius: 15px;
 }
 :root {
   --softBlue: #5368df;
@@ -82,6 +90,9 @@ body {
   color: var(--veryDarkBlue);
   background: #d3d3d3;
   margin: 0;
+}
+body section {
+  border: 1px solid #f00;
 }
 .u-wrapper {
   max-width: 1280px;
