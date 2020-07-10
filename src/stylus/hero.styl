@@ -1,20 +1,19 @@
-.hero 
-    .myPhoto
+.hero
+    background url('../images/cc-bg-1.webp') no-repeat center
+    background-size cover
+    .principal
+        display grid
+        justify-content center
+        .myPhoto
             padding 25px 0 0 0
-            margin auto
-            display block
             border-radius 15px
             max-width 250px
-    .button-container
-        ul
-            list-style-type none
-            display inline-flex
-            li
-                padding 15px
-                background-color --softBlue
-                a
-                    text-decoration none
-                    color black
-                
-                
-
+        @import './button-container.styl'
+    .titles
+        h1, h2
+            color white
+            text-align: center
+            padding 0 30px
+            font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        h2
+            font-size 0.95em

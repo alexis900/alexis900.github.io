@@ -1,3 +1,23 @@
+:root {
+  --softBlue: #5368df;
+  --softRed: #fa5757;
+  --grayishBlue: #9194a1;
+  --veryDarkBlue: #252b46;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--veryDarkBlue);
+  background: #d3d3d3;
+  margin: 0;
+}
+body section {
+  border: 1px solid #f00;
+}
+.u-wrapper {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1em;
+}
 .menu {
   visibility: hidden;
   position: absolute;
@@ -72,55 +92,44 @@
   justify-content: space-between;
   align-items: center;
 }
-.icon {
-  width: 32px;
-  height: 32px;
+.hero {
+  background: url("../images/cc-bg-1.webp") no-repeat center;
+  background-size: cover;
 }
-.icon-github {
-  background: url("../images/icon-github.svg") no-repeat center;
+.hero .principal {
+  display: grid;
+  justify-content: center;
 }
-.icon-linkedin {
-  background: url("../images/icon-linkedin.svg") no-repeat center;
-}
-.icon-email {
-  background: url("../images/icon-email.svg") no-repeat center;
-}
-.hero .myPhoto {
+.hero .principal .myPhoto {
   padding: 25px 0 0 0;
-  margin: auto;
-  display: block;
   border-radius: 15px;
   max-width: 250px;
 }
-.hero .button-container ul {
+.hero .principal .button-container ul {
   list-style-type: none;
   display: inline-flex;
+  item-align: center;
 }
-.hero .button-container ul li {
-  padding: 15px;
-  background-color: --softBlue;
-}
-.hero .button-container ul li a {
+.hero .principal .button-container ul li a {
+  margin: 0 5px 0 0;
+  padding: 10px;
   text-decoration: none;
-  color: #000;
+  background-color: var(--grayishBlue);
+  border-radius: 25px;
 }
-:root {
-  --softBlue: #5368df;
-  --softRed: #fa5757;
-  --grayishBlue: #9194a1;
-  --veryDarkBlue: #252b46;
+.hero .principal .button-container ul li a .mdi {
+  position: relative;
+  top: 3px;
+  font-size: 25px;
+  color: #fff;
 }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: var(--veryDarkBlue);
-  background: #d3d3d3;
-  margin: 0;
+.hero .titles h1,
+.hero .titles h2 {
+  color: #fff;
+  text-align: center;
+  padding: 0 30px;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
-body section {
-  border: 1px solid #f00;
-}
-.u-wrapper {
-  max-width: 1280px;
-  margin: auto;
-  padding: 0 1em;
+.hero .titles h2 {
+  font-size: 0.95em;
 }
