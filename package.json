@@ -1,0 +1,20 @@
+{
+  "name": "mi-cv",
+  "version": "1.0.0",
+  "description": "Página web personal donde se podrá consultar mi experiencia personal, redes sociales, habilidades y formación. Esta podrá servir como CV.",
+  "main": "index.js",
+  "scripts": {
+    "start": "stylus -w .\\src\\stylus\\style.styl -o .\\static\\css\\style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexis900/alexis900.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexis900/alexis900.github.io/issues"
+  },
+  "homepage": "https://github.com/alexis900/alexis900.github.io#readme"
+}
