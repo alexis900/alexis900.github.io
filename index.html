@@ -4,20 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
-    <title>Alejandro Martín Pérez - Portfolio</title>
+    <title>Alejandro Martín Pérez · Portfolio</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#">🏠 Inicio</a>
-            <a href="#">🛠️ Proyectos</a>
-        </nav>
+    <div class="matrix-overlay" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <div class="brand">
+                <span class="brand-dot"></span>
+                <span>Alejandro Martín Pérez</span>
+            </div>
+            <nav class="site-nav">
+                <a href="#inicio" data-i18n="nav.home">Inicio</a>
+                <a href="#stack" data-i18n="nav.stack">Stack</a>
+                <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+                <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+            </nav>
+            <div class="lang-switch" role="group" aria-label="Idioma">
+                <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+                <button class="lang-btn" data-lang="ca" aria-pressed="false">CAT</button>
+                <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
     </header>
     <main>
-        <h1>Portfolio de Alejandro Martín muy provisional</h1>
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">System Administrator · Infraestructura · Automatización</p>
+                    <h1 data-i18n="hero.title">Infraestructura sólida, automatizada y bajo control.</h1>
+                    <p class="lead" data-i18n="hero.lead">
+                        Soy Alejandro Martín Pérez. Diseño y mantengo sistemas Linux confiables, despliegues con contenedores y entornos self-hosted listos para crecer.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="#proyectos" data-i18n="hero.cta_projects">Ver proyectos</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <span class="stat">GNU/Linux</span>
+                            <span class="label" data-i18n="hero.stat_sysadmin">Sysadmin</span>
+                        </div>
+                        <div>
+                            <span class="stat">Proxmox</span>
+                            <span class="label" data-i18n="hero.stat_virtualization">Virtualización</span>
+                        </div>
+                        <div>
+                            <span class="stat">Docker</span>
+                            <span class="label" data-i18n="hero.stat_containers">Contenedores</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="terminal-frame">
+                        <div class="terminal-content">
+                            <span class="terminal-line">status --infra</span>
+                            <span class="terminal-muted" data-i18n="terminal.infra">ok · linux · docker · backups</span>
+                            <span class="terminal-line">status --automation</span>
+                            <span class="terminal-muted" data-i18n="terminal.automation">ok · scripts · domótica · tareas</span>
+                            <span class="terminal-line">status --availability</span>
+                            <span class="terminal-muted" data-i18n="terminal.availability">Disponible para colaborar</span>
+                            <div class="tag-row">
+                                <span class="tag" data-i18n="tags.self_hosted">Self-hosted</span>
+                                <span class="tag" data-i18n="tags.backups">Backups</span>
+                                <span class="tag" data-i18n="tags.domotica">Domótica</span>
+                            </div>
+                            <div class="ha-badge">
+                                <img src="assets/home-assistant-icon-flat.svg" alt="Home Assistant logo">
+                                <span>Home Assistant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-glow"></div>
+        </section>
+
+        <section id="stack" class="section">
+            <div class="container stack-grid">
+                <div class="section-head">
+                    <h2 data-i18n="stack.title">Stack operativo</h2>
+                    <p data-i18n="stack.subtitle">Herramientas que uso a diario para entregar infraestructura estable.</p>
+                </div>
+                <div class="stack-panel">
+                    <div class="stack-item">
+                        <h3 data-i18n="stack.infra_title">Infraestructura</h3>
+                        <p data-i18n="stack.infra_text">Linux en general, redes y servicios core.</p>
+                    </div>
+                    <div class="stack-item">
+                        <h3 data-i18n="stack.containers_title">Contenedores</h3>
+                        <p data-i18n="stack.containers_text">Docker, Docker Compose y despliegues reproducibles.</p>
+                    </div>
+                    <div class="stack-item">
+                        <h3 data-i18n="stack.automation_title">Automatización</h3>
+                        <p data-i18n="stack.automation_text">Bash, Python, PowerShell, tareas programadas y domótica.</p>
+                    </div>
+                    <div class="stack-item">
+                        <h3 data-i18n="stack.security_title">Seguridad y backup</h3>
+                        <p data-i18n="stack.security_text">Políticas, restore probado y hardening básico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 data-i18n="projects.title">Proyectos destacados</h2>
+                    <p data-i18n="projects.subtitle">Repos públicos centrados en infra y automatización.</p>
+                </div>
+                <div class="cards">
+                    <article class="project-card">
+                        <h3>
+                            <a href="https://github.com/alexis900/homelab-stack-compose" target="_blank" rel="noreferrer">
+                                homelab-stack-compose
+                            </a>
+                        </h3>
+                        <p data-i18n="projects.homelab_text">Stack self-hosted con servicios críticos y despliegues reproducibles.</p>
+                        <span class="meta" data-i18n="projects.homelab_meta">Infra · Docker Compose</span>
+                    </article>
+                    <article class="project-card">
+                        <h3>
+                            <a href="https://github.com/alexis900/x265_convert_script" target="_blank" rel="noreferrer">
+                                x265_convert_script
+                            </a>
+                        </h3>
+                        <p data-i18n="projects.x265_text">Script para convertir vídeo a H.265 de forma sencilla y repetible.</p>
+                        <span class="meta" data-i18n="projects.x265_meta">Scripting · Media</span>
+                    </article>
+                    <article class="project-card">
+                        <h3>
+                            <a href="https://github.com/alexis900/cert_generator" target="_blank" rel="noreferrer">
+                                cert_generator
+                            </a>
+                        </h3>
+                        <p data-i18n="projects.cert_text">Generación de certificados para entornos internos y servicios locales.</p>
+                        <span class="meta" data-i18n="projects.cert_meta">Seguridad · Automatización</span>
+                    </article>
+                    <article class="project-card">
+                        <h3>
+                            <a href="https://github.com/alexis900/pxe-ipxe-lab" target="_blank" rel="noreferrer">
+                                pxe-ipxe-lab
+                            </a>
+                        </h3>
+                        <p data-i18n="projects.pxe_text">Laboratorio PXE/iPXE para despliegues y arranques por red.</p>
+                        <span class="meta" data-i18n="projects.pxe_meta">Redes · Provisioning</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="section alt">
+            <div class="container about-grid">
+                <div>
+                    <h2 data-i18n="about.title">Sobre mí</h2>
+                    <p data-i18n="about.p1">
+                        Me enfoco en infraestructuras confiables con automatización y buen criterio operativo. Me gusta dejar las cosas documentadas, con backups probados y monitoreo visible.
+                    </p>
+                    <p data-i18n="about.p2">
+                        Trabajo cómodo en entornos mixtos, homelab o producción, priorizando estabilidad, seguridad y procesos que se puedan repetir y escalar.
+                    </p>
+                </div>
+                <ul class="skills">
+                    <li data-i18n="skills.linux_admin">Administración de sistemas Linux (Debian)</li>
+                    <li data-i18n="skills.proxmox">Virtualización con Proxmox</li>
+                    <li data-i18n="skills.containers">Contenedores con Docker / Docker Compose</li>
+                    <li data-i18n="skills.scripting">Scripting en Bash, Python y PowerShell</li>
+                    <li data-i18n="skills.backups">Backups y restore de servicios críticos</li>
+                    <li data-i18n="skills.homelab">Infraestructura self-hosted (homelab)</li>
+                    <li data-i18n="skills.domotica">Automatización en domótica</li>
+                </ul>
+            </div>
+        </section>
+
     </main>
-    <footer>
-        Programmed with 💓
+    <footer class="site-footer">
+        <div class="container">
+            <span data-i18n="footer.care">Codificado con cuidado.</span>
+            <span>© 2026</span>
+        </div>
     </footer>
+    <script src="assets/i18n.js"></script>
 </body>
 </html>
