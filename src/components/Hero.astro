@@ -1,0 +1,49 @@
+---
+import { PROFILE } from '../data/i18n.js';
+
+const { t } = Astro.props;
+const term = t.terminal;
+---
+
+<section id="inicio" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{t.hero.eyebrow}</p>
+      <h1>{t.hero.title}</h1>
+      <p class="lead">{t.hero.lead}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#proyectos">{t.hero.ctaProjects}</a>
+        <a class="btn btn-ghost" href={PROFILE.github} target="_blank" rel="noreferrer">
+          {t.hero.ctaGithub} <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <dl class="stats">
+        {
+          t.hero.stats.map((stat) => (
+            <div>
+              <dt>{stat.value}</dt>
+              <dd>{stat.label}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <div class="terminal-wrap">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="terminal-title">{term.title}</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span><span class="cmd">{term.infra}</span><span class="out">{term.infraOut}</span></p>
+          <p><span class="prompt">$</span><span class="cmd">{term.automation}</span><span class="out">{term.automationOut}</span></p>
+          <p class="status"><span class="prompt">$</span><span class="cmd">{term.availability}</span><span class="out">{term.availabilityOut}</span></p>
+          <div class="terminal-badge"><span aria-hidden="true"></span>{term.badge}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

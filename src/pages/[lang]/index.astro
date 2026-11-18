@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Stack from '../../components/Stack.astro';
+import Projects from '../../components/Projects.astro';
+import About from '../../components/About.astro';
+import Contact from '../../components/Contact.astro';
+import { UI, PROFILE } from '../../data/i18n.js';
+
+export function getStaticPaths() {
+  return ['es', 'ca', 'en'].map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = UI[lang];
+
+const title = `${PROFILE.name} · ${t.nav.inicio} · Portfolio`;
+const description = `${t.hero.eyebrow}. ${t.hero.title}`;
+---
+
+<BaseLayout lang={lang} t={t} title={title} description={description}>
+  <Hero t={t} />
+  <Stack t={t} />
+  <Projects t={t} />
+  <About t={t} />
+  <Contact t={t} />
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+const { t } = Astro.props;
+---
+
+<section id="stack" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{t.stack.kicker}</p>
+        <h2>{t.stack.title}</h2>
+      </div>
+      <p class="section-sub">{t.stack.subtitle}</p>
+    </div>
+
+    <div class="stack-grid">
+      {
+        t.stack.items.map((item, i) => (
+          <article class="stack-item">
+            <span class="stack-index">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

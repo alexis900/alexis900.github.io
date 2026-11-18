@@ -1,0 +1,21 @@
+---
+const { t } = Astro.props;
+---
+
+<section id="sobre-mi" class="section">
+  <div class="container about-grid">
+    <div class="about-copy">
+      <p class="kicker">{t.about.kicker}</p>
+      <h2>{t.about.title}</h2>
+      <p>{t.about.p1}</p>
+      <p>{t.about.p2}</p>
+    </div>
+
+    <div>
+      <p class="skills-title">{t.about.skillsTitle}</p>
+      <ul class="skills">
+        {t.about.skills.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

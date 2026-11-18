@@ -1,0 +1,20 @@
+---
+import { PROFILE } from '../data/i18n.js';
+
+const { t } = Astro.props;
+---
+
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="contact-card">
+      <div>
+        <p class="kicker">{t.contact.kicker}</p>
+        <h2>{t.contact.title}</h2>
+        <p>{t.contact.text}</p>
+      </div>
+      <a class="btn btn-primary" href={PROFILE.github} target="_blank" rel="noreferrer">
+        {t.contact.cta} <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+import { LANGS, PROFILE } from '../data/i18n.js';
+
+const { lang, t } = Astro.props;
+
+const nav = [
+  { href: '#inicio', label: t.nav.inicio },
+  { href: '#stack', label: t.nav.stack },
+  { href: '#proyectos', label: t.nav.proyectos },
+  { href: '#sobre-mi', label: t.nav.sobre },
+  { href: '#contacto', label: t.nav.contacto },
+];
+---
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href={`/${lang}/`}>
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>{PROFILE.name}</span>
+    </a>
+
+    <nav class="site-nav" aria-label={t.nav.inicio}>
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <div class="lang-switch" role="group" aria-label={t.langLabel}>
+      {
+        LANGS.map((l) => (
+          <a
+            class:list={['lang-btn', { 'is-active': l.code === lang }]}
+            href={`/${l.code}/`}
+            hreflang={l.code}
+            aria-current={l.code === lang ? 'page' : undefined}
+            aria-label={l.name}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</header>

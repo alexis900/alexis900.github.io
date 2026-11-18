@@ -1,0 +1,33 @@
+---
+const { t } = Astro.props;
+---
+
+<section id="proyectos" class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{t.projects.kicker}</p>
+        <h2>{t.projects.title}</h2>
+      </div>
+      <p class="section-sub">{t.projects.subtitle}</p>
+    </div>
+
+    <div class="cards">
+      {
+        t.projects.items.map((project, i) => (
+          <article class="project-card">
+            <div class="card-top">
+              <span>{String(i + 1).padStart(2, '0')}</span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3>
+              <a href={project.href} target="_blank" rel="noreferrer">{project.name}</a>
+            </h3>
+            <p>{project.text}</p>
+            <span class="meta">{project.meta}</span>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
