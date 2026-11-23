@@ -1,7 +1,8 @@
 ---
 import { LANGS, PROFILE } from '../data/i18n.js';
 
-const { lang, t } = Astro.props;
+const { lang, t, path } = Astro.props;
+const isLegal = path.includes('/legal');
 
 const nav = [
   { href: '#inicio', label: t.nav.inicio },
@@ -28,7 +29,7 @@ const nav = [
         LANGS.map((l) => (
           <a
             class:list={['lang-btn', { 'is-active': l.code === lang }]}
-            href={`/${l.code}/`}
+            href={isLegal ? `/${l.code}/legal/` : `/${l.code}/`}
             hreflang={l.code}
             aria-current={l.code === lang ? 'page' : undefined}
             aria-label={l.name}

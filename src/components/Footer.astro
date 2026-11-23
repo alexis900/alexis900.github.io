@@ -1,10 +1,13 @@
 ---
-const { t } = Astro.props;
+const { lang, t } = Astro.props;
 ---
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>{t.footer.care}</span>
+    <div class="footer-left">
+      <span>{t.footer.care}</span>
+      <a href={`/${lang}/legal/`}>{t.footer.legal}</a>
+    </div>
     <span>{t.footer.rights}</span>
   </div>
 </footer>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { UI, PROFILE } from '../../data/i18n.js';
+
+export function getStaticPaths() {
+  return ['es', 'ca', 'en'].map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = UI[lang];
+const title = `${t.legal.title} · ${PROFILE.name}`;
+---
+
+<BaseLayout lang={lang} t={t} title={title} description={t.legal.intro}>
+  <section class="section legal-section">
+    <div class="container legal">
+      <p class="kicker">{t.legal.kicker}</p>
+      <h1>{t.legal.title}</h1>
+      <p class="legal-updated">{t.legal.updated}</p>
+      <p class="lead">{t.legal.intro}</p>
+
+      <div class="legal-grid">
+        <article class="legal-item">
+          <h2>{t.legal.holderTitle}</h2>
+          <p>{t.legal.holder}</p>
+          <h2>{t.legal.contactTitle}</h2>
+          <p>
+            {t.legal.contact}{' '}
+            <a href={PROFILE.github} target="_blank" rel="noreferrer">GitHub ↗</a>
+          </p>
+        </article>
+
+        <article class="legal-item">
+          <h2>{t.legal.dataTitle}</h2>
+          <p>{t.legal.data}</p>
+          <h2>{t.legal.cookiesTitle}</h2>
+          <p>{t.legal.cookies}</p>
+        </article>
+
+        <article class="legal-item">
+          <h2>{t.legal.thirdTitle}</h2>
+          <p>{t.legal.third}</p>
+        </article>
+
+        <article class="legal-item">
+          <h2>{t.legal.rightsTitle}</h2>
+          <p>{t.legal.rights}</p>
+        </article>
+      </div>
+
+      <a class="btn btn-ghost legal-back" href={`/${lang}/`}>
+        <span aria-hidden="true">←</span> {t.legal.back}
+      </a>
+    </div>
+  </section>
+</BaseLayout>
